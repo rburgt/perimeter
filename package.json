@@ -1,0 +1,19 @@
+{
+  "name": "perimeter",
+  "version": "0.0.1",
+  "description": "Virtual interaction layer",
+  "main": "src/perimeter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rburgt/perimeter.git"
+  },
+  "author": "Rob van der Burgt <rburgt@gmail.com> (https://github.com/rburgt)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rburgt/perimeter/issues"
+  },
+  "homepage": "https://github.com/rburgt/perimeter#readme"
+}
