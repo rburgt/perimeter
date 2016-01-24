@@ -1,10 +1,11 @@
 {
   "name": "perimeter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Virtual interaction layer",
   "main": "src/perimeter.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify src/perimeter.js -t babelify --outfile build/perimeter.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/rburgt/perimeter/issues"
   },
-  "homepage": "https://github.com/rburgt/perimeter#readme"
+  "homepage": "https://github.com/rburgt/perimeter#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2015-loose": "^7.0.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0"
+  }
 }

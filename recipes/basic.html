@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            border: 0;
+            line-height: 20px;
+            padding: 5px 10px;
+            color: white;
+            background: olivedrab;
+        }
+
+        button.nearby {
+            background: tomato;
+        }
+    </style>
+</head>
+<body>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <p>
+        Button will highlight when mouse moves in a 50px perimeter
+    </p>
+    <button id="testbutton">nearby button test</button>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <script src="../build/perimeter.js"></script>
+    <script>
+        var buttonElement = document.querySelector('#testbutton');
+        var buttonPerimeter = perimeter.bindToElement(buttonElement, 50);
+
+        buttonPerimeter.addEventListener('mousemove', function(event){
+            console.log('move', event);
+        });
+
+        buttonPerimeter.addEventListener('mouseenter', function(event){
+            buttonElement.classList.add('nearby');
+        });
+
+        buttonPerimeter.addEventListener('mouseleave', function(event){
+            buttonElement.classList.remove('nearby');
+        });
+    </script>
+</body>
+</html>
