@@ -2,6 +2,7 @@
 
 A virtual interaction layer. Allows to respond to mouse movement around an element.
 
+![perimeter-basic-recipe](https://cloud.githubusercontent.com/assets/299887/12561923/b84409e8-c3a2-11e5-96e3-775375c4cafb.gif)
 
 # Install
 
@@ -15,7 +16,7 @@ Perimeter is distributed as an ecmascript 2015 module.
     import perimeter from 'perimeter';
     
     // bind to button element
-    let buttonElement = element.querySelector('');
+    let buttonElement = element.querySelector('.cssSelector');
     let buttonPerimeter = perimeter.bindToElement(buttonElement, 50);
     
     buttonPerimeter.addEventListener('mouseenter', function(){
