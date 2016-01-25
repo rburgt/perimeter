@@ -9,11 +9,26 @@
             line-height: 20px;
             padding: 5px 10px;
             color: white;
-            background: olivedrab;
+            background: dodgerblue;
+            cursor: pointer;
+            transition: box-shadow .2s ease;
+            box-shadow: 0 0 0 #222;
+            outline: none;
         }
 
+        /* drop minimal shadow when nearby */
         button.nearby {
-            background: tomato;
+            box-shadow: 0 0 5px #222;
+        }
+
+        /* drop full shadown when hovering */
+        button:hover {
+            box-shadow: 0 0 10px #000;
+        }
+
+        /* add inset shadow when pressing down */
+        button:active {
+            box-shadow: 0 0 5px #888, inset 0 0 10px #444;
         }
     </style>
 </head>
@@ -21,7 +36,7 @@
 
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <p>
-        Button will highlight when mouse moves in a 50px perimeter
+        Button will highlight when mouse moves in a 100px perimeter.
     </p>
     <button id="testbutton">nearby button test</button>
 
@@ -43,7 +58,7 @@
     <script src="../build/perimeter.js"></script>
     <script>
         var buttonElement = document.querySelector('#testbutton');
-        var buttonPerimeter = perimeter.bindToElement(buttonElement, 50);
+        var buttonPerimeter = perimeter.bindToElement(buttonElement, 100);
 
         buttonPerimeter.addEventListener('mousemove', function(event){
             console.log('move', event);
