@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            border: 0;
+            line-height: 20px;
+            padding: 5px 10px;
+            color: white;
+            background: dodgerblue;
+            cursor: pointer;
+            transition: box-shadow .02s ease;
+            box-shadow: 0 0 0 #222;
+            outline: none;
+        }
+
+        /* drop full shadown when hovering */
+        button:hover {
+            box-shadow: 0 0 10px #000;
+            transition: box-shadow .2s ease;
+        }
+
+        /* add inset shadow when pressing down */
+        button:active {
+            box-shadow: 0 0 5px #888, inset 0 0 10px #444;
+        }
+    </style>
+</head>
+<body>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<p>
+    Button will adjust shadow angle when moving cursor around
+</p>
+<button id="testbutton">call to action</button>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<script src="../build/perimeter.js"></script>
+<script>
+    var buttonElement = document.querySelector('#testbutton');
+    var buttonPerimeter = perimeter.bindToElement(buttonElement, 10000);
+
+    buttonPerimeter.addEventListener('mousemove', function(event){
+        var angle;
+        var distance;
+        var x;
+        var y;
+
+        if ( event.isInsideElement ) {
+            // allow css box-shadow when inside element
+            buttonElement.style.boxShadow = '';
+        } else {
+            // adjust box shadow according to angle from element center when
+            // moving outside element
+            distance = Math.min(1 + (event.distanceFromCenter / 100), 3);
+            angle = event.angleFromCenter*((Math.PI)/180);
+            x = Math.round(distance * Math.cos(angle));
+            y = Math.round(distance * Math.sin(angle));
+            buttonElement.style.boxShadow = (-1*x) + 'px ' + (-1*y) + 'px 10px rgba(0,0,0,.5)';
+        }
+    });
+</script>
+</body>
+</html>

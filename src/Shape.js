@@ -46,9 +46,21 @@ class PerimeterShape extends EventEmitter{
         this._clientY = event.clientY;
 
         if (clientX >= this.left && clientX <= this.right && clientY >= this.top && clientY <= this.bottom) {
+            let centerX = this.left + ((this.right - this.left) /2);
+            let centerY = this.top + ((this.bottom - this.top) /2);
+
             this.triggerEvent('mousemove', {
                 clientX,
-                clientY
+                clientY,
+                centerX,
+                centerY,
+                angleFromCenter: Math.atan2(clientY - centerY, clientX - centerX) * 180 / Math.PI,
+                distanceFromCenter: Math.sqrt(
+                    Math.pow(clientX - centerX,2) +
+                    Math.pow(clientY - centerY,2)
+                ),
+                isInsideElement: clientY >= this.top + this._marginSize && clientY <= this.bottom - this._marginSize
+                                && clientX >= this.left + this._marginSize && clientX <= this.right - this._marginSize
             });
 
             if (this._isInside !== true){
