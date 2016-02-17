@@ -57,8 +57,9 @@
     var buttonPerimeter = perimeter.bindToElement(buttonElement, 10000);
 
     buttonPerimeter.addEventListener('mousemove', function(event){
-        var angle;
         var distance;
+        var blur;
+        var angle;
         var x;
         var y;
 
@@ -68,11 +69,12 @@
         } else {
             // adjust box shadow according to angle from element center when
             // moving outside element
-            distance = Math.min(1 + (event.distanceFromCenter / 100), 3);
+            distance = Math.min(1 + (event.distanceFromCenter / 100), 2);
+            blur = 0.7 - (Math.min(1 + (event.distanceFromCenter / 300), 6)/10);
             angle = event.angleFromCenter*((Math.PI)/180);
             x = Math.round(distance * Math.cos(angle));
             y = Math.round(distance * Math.sin(angle));
-            buttonElement.style.boxShadow = (-1*x) + 'px ' + (-1*y) + 'px 10px rgba(0,0,0,.5)';
+            buttonElement.style.boxShadow = (-1*x) + 'px ' + (-1*y) + 'px 10px rgba(0,0,0,' + blur + ')';
         }
     });
 </script>
