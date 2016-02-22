@@ -11,7 +11,7 @@ A virtual interaction layer. Allows to respond to mouse movement around an eleme
 
 # Usage
 
-Perimeter is distributed as an ecmascript 2015 module.
+Perimeter is distributed as an ecmascript 2015 module. The sample below assumes you are using browserify and babelify.
 
     import perimeter from 'perimeter';
     
