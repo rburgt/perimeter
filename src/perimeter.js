@@ -8,8 +8,8 @@ let perimeter = {
 
     /**
      *
-     * @param element
-     * @param marginSize
+     * @param {HTMLElement} element
+     * @param {number} marginSize
      * @returns {Shape}
      */
     bindToElement(element, marginSize){
