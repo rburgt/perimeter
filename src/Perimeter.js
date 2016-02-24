@@ -4,7 +4,7 @@
  */
 import EventEmitter from './EventEmitter';
 
-class PerimeterShape extends EventEmitter{
+class Perimeter extends EventEmitter{
     /**
      *
      * @param {HTMLElement} element
@@ -214,4 +214,4 @@ class PerimeterShape extends EventEmitter{
 }
 
 
-export default PerimeterShape;
+export default Perimeter;

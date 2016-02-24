@@ -1,10 +1,10 @@
-import Shape from './Shape';
+import Perimeter from './Perimeter';
 
 let perimeter = {
     /**
-     * @type {Shape}
+     * @type {Perimeter}
      */
-    Shape,
+    Perimeter,
 
     /**
      * setup a perimeter
@@ -14,7 +14,7 @@ let perimeter = {
      * @returns {Shape}
      */
     setup(element, marginSize){
-        return new Shape(element, marginSize);
+        return new Perimeter(element, marginSize);
     }
 };
 

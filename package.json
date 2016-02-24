@@ -2,7 +2,7 @@
   "name": "perimeter",
   "version": "0.0.4",
   "description": "Virtual interaction layer",
-  "main": "src/Shape.js",
+  "main": "src/Perimeter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-standalone": "browserify src/perimeter.standalone.js -t babelify --outfile build/perimeter.standalone.js"
