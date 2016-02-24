@@ -7,12 +7,13 @@ let perimeter = {
     Shape,
 
     /**
+     * setup a perimeter
      *
      * @param {HTMLElement} element
      * @param {number} marginSize
      * @returns {Shape}
      */
-    bindToElement(element, marginSize){
+    setup(element, marginSize){
         return new Shape(element, marginSize);
     }
 };

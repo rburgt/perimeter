@@ -55,10 +55,10 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <script src="../build/perimeter.js"></script>
+    <script src="../build/perimeter.standalone.js"></script>
     <script>
         var buttonElement = document.querySelector('#testbutton');
-        var buttonPerimeter = perimeter.bindToElement(buttonElement, 100);
+        var buttonPerimeter = perimeter.setup(buttonElement, 100);
 
         buttonPerimeter.addEventListener('mousemove', function(event){
             console.log('move', event);

@@ -13,11 +13,11 @@ A virtual interaction layer. Allows to respond to mouse movement around an eleme
 
 Perimeter is distributed as an ecmascript 2015 module. The sample below assumes you are using browserify and babelify.
 
-    import perimeter from 'perimeter';
+    import Perimeter from 'perimeter';
     
     // bind to button element
     let buttonElement = element.querySelector('.cssSelector');
-    let buttonPerimeter = perimeter.bindToElement(buttonElement, 50);
+    let buttonPerimeter = new Perimeter(buttonElement, 50);
     
     buttonPerimeter.addEventListener('mouseenter', function(){
         // respond when mouse enters the perimeter
@@ -37,9 +37,9 @@ Alternatively you can use the build version to use a global object (check the re
 
 To create the stand alone version of the library run the following script.
 
-    npm run-script build
+    npm run-script build-standalone
     
-This will create `build\perimiter.js`. Including this file on a page will expose perimiter under the `window.perimiter` variable.
+This will create `build\perimiter.standalone.js`. Including this file on a page will expose perimiter under the `window.perimiter` variable.
 
 # Samples
 
