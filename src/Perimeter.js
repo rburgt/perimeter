@@ -67,9 +67,6 @@ class Perimeter extends EventEmitter{
     _onDocumentMouseMove(event){
         let {clientX, clientY} = event;
 
-        this._clientX = event.clientX;
-        this._clientY = event.clientY;
-
         if (clientX >= this.left && clientX <= this.right && clientY >= this.top && clientY <= this.bottom) {
             let centerX = this.left + ((this.right - this.left) /2);
             let centerY = this.top + ((this.bottom - this.top) /2);
