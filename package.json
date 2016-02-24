@@ -1,6 +1,6 @@
 {
   "name": "perimeter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Virtual interaction layer",
   "main": "src/Perimeter.js",
   "scripts": {
