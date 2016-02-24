@@ -11,7 +11,7 @@ A virtual interaction layer. Allows to respond to mouse movement around an eleme
 
 # Usage
 
-Perimeter is distributed as an ecmascript 2015 module.
+Perimeter is distributed as an ecmascript 2015 module. The sample below assumes you are using browserify and babelify.
 
     import perimeter from 'perimeter';
     
@@ -33,9 +33,13 @@ Perimeter is distributed as an ecmascript 2015 module.
 
 Alternatively you can use the build version to use a global object (check the recipes)
 
-# Build
+# Build stand alone verstion
+
+To create the stand alone version of the library run the following script.
 
     npm run-script build
+    
+This will create `build\perimiter.js`. Including this file on a page will expose perimiter under the `window.perimiter` variable.
 
 # Samples
 
