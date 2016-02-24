@@ -22,7 +22,7 @@ Perimeter is distributed as an ecmascript 2015 module.
         // respond when mouse enters the perimeter
     });
     
-    buttonPerimeter.addEventListener('mouseleves', function(){
+    buttonPerimeter.addEventListener('mouseleave', function(){
         // respond when mouse leaves the perimeter
     });
     
