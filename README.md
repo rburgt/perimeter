@@ -39,7 +39,8 @@ To create the stand alone version of the library run the following script.
 
     npm run-script build-standalone
     
-This will create `build\perimiter.standalone.js`. Including this file on a page will expose perimiter under the `window.perimiter` variable.
+This will create a readable version `build\perimiter.standalone.js` and a minified version `build\perimiter.standalone.min.js`. 
+Including this one of these files on a page will expose perimiter under the `window.perimiter` variable.
 
 # Samples
 

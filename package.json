@@ -5,7 +5,7 @@
   "main": "src/Perimeter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-standalone": "mkdirp build && browserify src/perimeter.standalone.js -t babelify --outfile build/perimeter.standalone.js"
+    "build-standalone": "mkdirp build && browserify src/perimeter.standalone.js -t babelify --outfile build/perimeter.standalone.js && uglifyjs build/perimeter.standalone.js --screw-ie8 -o build/perimeter.standalone.min.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
     "babel-preset-es2015-loose": "^7.0.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "uglifyjs": "^2.4.10"
   },
   "browserify": {
     "transform": [
