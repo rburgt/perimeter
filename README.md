@@ -33,7 +33,7 @@ Perimeter is distributed as an ecmascript 2015 module. The sample below assumes 
 
 Alternatively you can use the build version to use a global object (check the recipes)
 
-# Build stand alone verstion
+# Build standalone version
 
 To create the stand alone version of the library run the following script.
 
