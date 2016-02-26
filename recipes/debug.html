@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            border: 0;
+            line-height: 20px;
+            padding: 5px 10px;
+            color: white;
+            background: dodgerblue;
+            cursor: pointer;
+            transition: box-shadow .2s ease;
+            box-shadow: 0 0 0 #222;
+            outline: none;
+        }
+
+        /* drop minimal shadow when nearby */
+        button.nearby {
+            box-shadow: 0 0 5px #222;
+        }
+
+        /* drop full shadown when hovering */
+        button:hover {
+            box-shadow: 0 0 10px #000;
+        }
+
+        /* add inset shadow when pressing down */
+        button:active {
+            box-shadow: 0 0 5px #888, inset 0 0 10px #444;
+        }
+    </style>
+</head>
+<body>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<p>
+    Button will highlight when mouse moves in a 100px perimeter.
+</p>
+<button id="testbutton">toggle debug handler</button>
+<p id="debugger-status">debugger status: off</p>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<script src="../build/perimeter.standalone.js"></script>
+<script>
+    var debuggerStatusElement = document.querySelector('#debugger-status');
+    var buttonElement = document.querySelector('#testbutton');
+    var buttonPerimeter = perimeter.setup(buttonElement, 100);
+
+    buttonElement.addEventListener('click', function(){
+       perimeter.debug = !perimeter.debug;
+        debuggerStatusElement.innerHTML = 'debugger status: ' + (perimeter.debug ? 'on' : 'off');
+    });
+
+    buttonPerimeter.addEventListener('mouseenter', function(event){
+        buttonElement.classList.add('nearby');
+    });
+
+    buttonPerimeter.addEventListener('mouseleave', function(event){
+        buttonElement.classList.remove('nearby');
+    });
+</script>
+</body>
+</html>

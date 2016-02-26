@@ -208,6 +208,47 @@ class Perimeter extends EventEmitter{
         this._checkIfDirty();
         return this._left;
     }
+
+    /**
+     * Is current perimter in debug mode?
+     *
+     * @returns {boolean}
+     */
+    get debug(){
+        return this._debug === true;
+    }
+
+    /**
+     *
+     */
+    set debug(debug){
+        debug = debug === true;
+
+        if (debug !== this.debug){
+            // make sure the debug event handler is available
+            if (typeof this._onMouseMoveDebugHandler === 'undefined'){
+                this._onMouseMoveDebugHandler = this._onMouseMoveDebug.bind(this);
+            }
+
+            // bind or remove debug event handler
+            if (debug === true){
+                this.addEventListener('mousemove', this._onMouseMoveDebugHandler);
+            } else {
+                this.removeEventListener('mousemove', this._onMouseMoveDebugHandler);
+            }
+
+            // store new value
+            this._debug = debug;
+        }
+    }
+
+    /**
+     *
+     * @private
+     */
+    _onMouseMoveDebug(event){
+        console.log('Perimeter mouse move', this, event);
+    }
 }
 
 
