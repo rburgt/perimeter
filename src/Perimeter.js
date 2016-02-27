@@ -71,6 +71,11 @@ class Perimeter extends EventEmitter{
             let centerX = this.left + ((this.right - this.left) /2);
             let centerY = this.top + ((this.bottom - this.top) /2);
 
+            if (this._isInside !== true){
+                this._isInside = true;
+                this.triggerEvent('mouseenter');
+            }
+
             this.triggerEvent('mousemove', {
                 clientX,
                 clientY,
@@ -84,11 +89,6 @@ class Perimeter extends EventEmitter{
                 isInsideElement: clientY >= this.top + this._marginSize && clientY <= this.bottom - this._marginSize
                                 && clientX >= this.left + this._marginSize && clientX <= this.right - this._marginSize
             });
-
-            if (this._isInside !== true){
-                this._isInside = true;
-                this.triggerEvent('mouseenter');
-            }
         } else if (this._isInside === true){
             this._isInside = false;
             this.triggerEvent('mouseleave');
