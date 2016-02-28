@@ -210,7 +210,7 @@ class Perimeter extends EventEmitter{
     }
 
     /**
-     * Is current perimter in debug mode?
+     * Is current perimeter in debug mode?
      *
      * @returns {boolean}
      */
@@ -219,7 +219,10 @@ class Perimeter extends EventEmitter{
     }
 
     /**
+     * Set or unset perimeter in debug mode. When enabled the movements of the
+     * perimeter will be logged into the console.
      *
+     * @param {boolean} debug
      */
     set debug(debug){
         debug = debug === true;
