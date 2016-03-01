@@ -45,3 +45,7 @@ Including this one of these files on a page will expose perimiter under the `win
 # Samples
 
 Check the recipes folder for sample implementations. ( build the project to run samples )
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rburgt/perimeter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
